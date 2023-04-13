@@ -51,6 +51,7 @@ In addition to the above, the following new features were also added:
 Some difficulties encountered include hurdles that arose in the OOP design, difficulty in implementing the request class due to the complexity in the accountability (whether supervisor or coordinator approves them) and execution of requests, the need to find ways to avoid tight-coupling between classes, and increased complexity in the UML relationships. To solve the same, a thorough analysis of the relationship between objects was undertaken. SOLID principles were applied to manage classes and design principles were followed in UML class diagram creation. Additionally, debugging and revision were performed to refine the function.
 Furthermore, specifically for the request class, we decided to change our approach. Initially, we had decided to implement the four different request types as separate utils classes (RequestType1, RequestType2, etc.). However, this was proving too complex and inefficient. Instead, the request class was implemented as a method. We added an abstract processRequest() method in the Request class, then the four child request classes will implement the processRequest() method. The CoordinatorViewRequest method was also changed to align with this, and further checks were put in place.
 
+
 ---
 
 *Submission: This repository is submitted to Nanyang Technological University Singapore as a project for module SC2002 AY2023*
