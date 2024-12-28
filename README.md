@@ -1,5 +1,3 @@
-# SC2002 Assignment AY2023
-
 ## NTU Final Year Project Management System
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)    
 ![cover](https://drive.google.com/uc?export=view&id=1GX_HnXsmmYM1JdbecMcJFP4w3QGlWqCs)   
