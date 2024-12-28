@@ -4,7 +4,18 @@ import java.util.Comparator;
 
 import main.Models.Request;
 
+/**
+* Provide methods to sort request arraylist
+* The class does not have any public constructors and should be used as a static utility class.
+*  
+* @author Dr. Heinz Doofenshmirtz
+* @version 1.0
+* @since 2023-4-13
+*/
 public class ReqSortBy {
+    /**
+     * Comparator to sort by request ID
+     */
     public static Comparator<Request> ID = new Comparator<Request>() {
 
         @Override
@@ -17,6 +28,9 @@ public class ReqSortBy {
         
     };
 
+    /**
+     * Comparator to sort by request Type
+     */
     public static Comparator<Request> Type = new Comparator<Request>() {
 
         @Override
@@ -29,6 +43,9 @@ public class ReqSortBy {
         
     };
 
+    /**
+     * Comparator to sort by request status
+     */
     public static Comparator<Request> Status = new Comparator<Request>() {
 
         @Override

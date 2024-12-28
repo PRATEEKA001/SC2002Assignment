@@ -3,16 +3,33 @@ package main.Models;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-
+/**
+ * Coordinator is a subclass of Supervisor
+ *
+ * @author Dr. Heinz Doofenshmirtz
+ * @version 1.0
+ * @since 2023-4-13
+ */
 public class Coordinator extends Supervisor{
-
+    /**
+     * Constructing the Coordinator class
+     *
+     * @param name type of user
+     * @param email email of user
+     */
     public Coordinator(String name, String email){
+
         super(name, email);
         this.type = 3;
         this.updateProject();
         this.updateRequest();
     }
-
+    /**
+     * Method to retrieve projects of an user
+     *
+     * @param type mode of retrieve
+     * @return an array list of said user
+     */
     public ArrayList<Project> getProjects(int type){
         if(type == 1){
             return super.getProjects();
@@ -29,7 +46,10 @@ public class Coordinator extends Supervisor{
         }
         return null;
     }
-
+    /**
+     * Method to initialise the project list of an user
+     *
+     */
     @Override
     public void initialiseProject() {
 
@@ -62,7 +82,10 @@ public class Coordinator extends Supervisor{
             System.out.println(e);
         }
     }
-
+    /**
+     * Method to initialize the request list of an user
+     *
+     */
     @Override
     public void initialiseRequest() {
         String filePath = System.getProperty("user.dir") + "\\main\\Data\\request_record.csv";
@@ -103,7 +126,11 @@ public class Coordinator extends Supervisor{
             System.out.println(e);
         }
     }
-
+    /**
+     * Method to print the projects of an user
+     *
+     * @param type mode of retrieve
+     */
     public void printProjects(int type){
         System.out.println("╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
         System.out.println("║                                             ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗                                             ║");

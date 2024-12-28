@@ -4,23 +4,49 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
+/**
+* The Supervisor class
+*
+* @author Dr. Heinz Doofenshmirtz
+* @version 1.0
+* @since 2023-4-13
+*/
 public class Supervisor extends User implements IinitialiseRequest, IinitialiseProject{
+    /**
+     * List of projects made by supervisor.
+     */
 	private ArrayList<Project> projects = new ArrayList<Project>();
+    /**
+     * List of requests made by and directed at supervisor.
+     */
     private ArrayList<Request> requestList = new ArrayList<Request>();
-
+    /**
+     * to keep track of how many students the supervisor is supervising
+     */
     protected int countSupervising=0;
-
+    /**
+     * constructor of supervisor
+     * @param name supervisor's name
+     * @param email supervisor's email
+     */
 	public Supervisor(String name, String email) {
         super(name, email);
         this.type = 2;
         initialiseProject();
         initialiseRequest();
     }
-
+    /**
+     * Gets number of students supervising
+     * @return numer of students supervising
+     */
     public int getSupCount(){
         return this.countSupervising;
     }
-
+    /**
+     * Gets supervisor's project according to project's ID
+     * @param projectID ID of project
+     * @return project of that projectID
+     */
     public Project getProjectbyID(String projectID) {
         for(Project p : this.projects){
             if(p.getID().equals(projectID)){
@@ -29,11 +55,16 @@ public class Supervisor extends User implements IinitialiseRequest, IinitialiseP
         }
         return null;
     }
-
+    /**
+     * Gets list of projects created by supervisor
+     * @return projects
+     */
     public ArrayList<Project> getProjects(){
         return this.projects;
     }
-
+    /**
+     * initialise 1 project
+     */
     public void initialiseProject(){
         String filePath = System.getProperty("user.dir") + "\\main\\Data\\project_record.csv";
         String currentLine;
@@ -56,20 +87,24 @@ public class Supervisor extends User implements IinitialiseRequest, IinitialiseP
                         }
                     }
                 }
-                
+
             }
             br.close();
         } catch(Exception e){
             System.out.println(e);
         }
     }
-
+    /**
+     * updates the list of projects created by supervisor and creates a new project
+     */
     public void updateProject(){
         this.projects = new ArrayList<Project>();
         this.countSupervising = 0;
         this.initialiseProject();
     }
-
+    /**
+     * initialises request to be made
+     */
     public void initialiseRequest(){
         String filePath = System.getProperty("user.dir") + "\\main\\Data\\request_record.csv";
         String currentLine;
@@ -95,7 +130,7 @@ public class Supervisor extends User implements IinitialiseRequest, IinitialiseP
                         }
                     }
                 }
-                
+
 
             }
             br.close();
@@ -103,16 +138,27 @@ public class Supervisor extends User implements IinitialiseRequest, IinitialiseP
             System.out.println(e);
         }
     }
-
+    /**
+     * Updates request list of supervisor
+     */
     public void updateRequest(){
         this.requestList = new ArrayList<Request>();
         this.initialiseRequest();
     }
 
+    /**
+     * Getter to get supervisor's request arraylist
+     * @return supervisor's request arraylist
+     */
     public ArrayList<Request> getRequests(){
         return this.requestList;
     }
 
+    /**
+     * Method to get a request in the request list by reuqest ID
+     * @param requestID target request ID
+     * @return target request
+     */
     public Request getRequestbyID(String requestID) {
         for(Request r : this.requestList){
             if(r.getRequestID().equals(requestID)){
@@ -121,7 +167,9 @@ public class Supervisor extends User implements IinitialiseRequest, IinitialiseP
         }
         return null;
     }
-
+    /**
+     * prints out the list of projects that can be viewed and selected by student
+     */
     public void printProjects(){
         System.out.println("╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
         System.out.println("║                                             ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗                                             ║");
@@ -139,7 +187,6 @@ public class Supervisor extends User implements IinitialiseRequest, IinitialiseP
         }
         System.out.println("╚══════════════════╩════════════════════════════════════════════════════════════════════════════════════╩════════════════╩═════════════════════════╩═════════╝");
     }
-
 }
 
 

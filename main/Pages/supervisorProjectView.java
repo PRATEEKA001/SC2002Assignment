@@ -6,16 +6,30 @@ import java.util.Scanner;
 import main.Models.Project;
 import main.Models.Supervisor;
 import main.Utils.ConsoleUtils;
-
+/**
+ * supervisorProjectView is a subclass of Page that allows supervisor to view their project
+ *
+ * @author Dr. Heinz Doofenshmirtz
+ * @version 1.0
+ * @since 13-4-2023
+ */
 public class supervisorProjectView extends Page{
     Scanner sc = new Scanner(System.in);
     private Supervisor staff;
-
+    
+    /**
+     * Constructor for this page
+     * @param previouPage the previous page
+     * @param staff the current supervisor object
+     */
     public supervisorProjectView(Page previouPage, Supervisor staff){
         super(previouPage);
         this.staff = staff;
     }
-
+    /**
+     * Main executable for supervisorProjectView page
+     * @return next page {@link main.Pages.StudentMain}
+     */
     @Override
     public Page executable(){
         ConsoleUtils.clearScreen();                              

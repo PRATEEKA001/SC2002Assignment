@@ -11,18 +11,33 @@ import main.Utils.ConsoleUtils;
 import main.Utils.FileHandler;
 import main.Utils.UIDGenerator;
 import main.Utils.FileHandler;
-
+/**
+ * StudentProjectRegister is a subclass of Page that allows student to register projects
+ *
+ * @author Dr. Heinz Doofenshmirtz
+ * @version 1.0
+ * @since 13-4-2023
+ */
 public class StudentProjectRegister extends Page{
     private Student student;
     private String[] projectData;
     private Scanner sc = new Scanner(System.in);
-
+    
+    /**
+     * Constructor for this class
+     * @param previousPage the previous page
+     * @param student the current user
+     * @param projectData data of project as string array
+     */
     public StudentProjectRegister(Page previousPage, Student student, String[] projectData) {
         super(previousPage);
         this.student = student;
         this.projectData = projectData;
     }
-
+    /**
+     * Main executable for this page
+     * @return next page {@link main.Pages.StudentMain}
+     */
     @Override
     public Page executable() {
         ConsoleUtils.clearScreen();

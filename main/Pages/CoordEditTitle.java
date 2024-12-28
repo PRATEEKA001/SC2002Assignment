@@ -6,15 +6,33 @@ import main.Models.Coordinator;
 import main.Utils.ConsoleUtils;
 import main.Utils.FileHandler;
 
+/**
+* Page for Coordinator to edit title of a project
+*  
+* @author Dr. Heinz Doofenshmirtz
+* @version 1.0
+* @since 2023-4-13
+*/
 public class CoordEditTitle extends Page{
     private Scanner sc = new Scanner(System.in);
     private Coordinator coordinator;
 
+    /**
+     * Constructor for this class
+     * @param previousPage the previous page
+     * @param coordinator the current user
+     */
     public CoordEditTitle(Page previousPage, Coordinator coordinator) {
         super(previousPage);
         this.coordinator = coordinator;
     }
 
+    /**
+    * Main executable for this page
+    * 
+    * Please see the {@link main.Pages.Page} class for abstract method
+    * @return next page {@link main.Pages.CoordinatorMain}
+    */
     @Override
     public Page executable() {
         ConsoleUtils.clearScreen();

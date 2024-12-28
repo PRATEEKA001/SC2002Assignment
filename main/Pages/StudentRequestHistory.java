@@ -8,17 +8,31 @@ import main.Models.Student;
 import main.Utils.ConsoleUtils;
 import main.Utils.FileHandler;
 import main.Utils.ReqSortBy;
-
+/**
+ * StudentRequestHistory is a subclass of Page that allows student to view their request history
+ *
+ * @author Dr. Heinz Doofenshmirtz
+ * @version 1.0
+ * @since 13-4-2023
+ */
 public class StudentRequestHistory extends Page{
     private Scanner sc = new Scanner(System.in);
     private Student student;
     private static int student_req_sortedby = 1;
-
+    
+    /**
+     * Constructor for this class
+     * @param previousPage the previous page
+     * @param student the current user
+     */
     public StudentRequestHistory(Page previousPage, Student student) {
         super(previousPage);
         this.student = student;
     }
-                                         
+    /**
+     * Main executable for this page
+     * @return next page {@link main.Pages.StudentMain}
+     */
     @Override
     public Page executable() {
         ConsoleUtils.clearScreen();

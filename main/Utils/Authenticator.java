@@ -1,7 +1,22 @@
 package main.Utils;
 
+/**
+* Provide methods to authenticate different user types
+* The class does not have any public constructors and should be used as a static utility class.
+*  
+* @author Dr. Heinz Doofenshmirtz
+* @version 1.0
+* @since 2023-4-13
+*/
 public class Authenticator {
 
+    /**
+     * Method to authenticate student
+     * 
+     * @param username userID of student
+     * @param password password of student
+     * @return whether the student passed authentication
+     */
     public static boolean authenticateStudent(String username, String password){
         
         /* filepath */
@@ -33,6 +48,13 @@ public class Authenticator {
   
     }
 
+    /**
+     * Method to authenticate staff
+     * 
+     * @param username userID of staff
+     * @param password password of staff
+     * @return whether the staff passed authentication
+     */
     public static boolean authenticateStaff(String username, String password){
         
         /* filepath */
