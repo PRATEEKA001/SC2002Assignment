@@ -2,10 +2,10 @@
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)    
 ![cover](https://drive.google.com/uc?export=view&id=1GX_HnXsmmYM1JdbecMcJFP4w3QGlWqCs)   
 ### Team Member:
+- [Prateek Potdar](https://github.com/PRATEEKA001)
 - [Oscar Qian](https://github.com/oscarqjh)
 - [Asher Lim](https://github.com/ieatsighpies)
 - [Zhaoding Chew](https://github.com/ZDchew)
-- [Prateek Potdar](https://github.com/PRATEEKA001)
 - [Khanh Nguyen](https://github.com/ngk2305)
 ---
 
